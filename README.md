@@ -1,7 +1,8 @@
 # DIPCOM: Learning Diffusion Policies from Demonstrations For Compliant Contact-rich Manipulation
 
 Video: https://youtu.be/77tUVfyqHrw
-Project page: TBD
+
+Project page: https://omron-sinicx.github.io/DIPCOM/
 
 Code coming soon...
 
