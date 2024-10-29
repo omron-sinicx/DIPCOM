@@ -1,0 +1,49 @@
+# ================== Policy Training and Evaluation Settings ==================
+# policy:
+bimanual: false
+# Learning rate scheduler settings
+lr_scheduler: true
+lr_scheduler_type: cosine_annealing # one_cycle, cosine_annealing
+lr: 1.0e-4
+lr_min: 1.0e-7
+
+# Batch size settings
+batch_size: 8 # increase based on GPU memory availability
+
+# EMA settings
+use_ema: true
+decay: 0.995
+
+# Training settings
+epochs: 1000
+train_ratio: 0.9
+seed: 69  # for good luck
+grad_clip_norm: 1.0
+
+fps: ${dataset.dataset.fps}
+
+# Checkpoint settings
+max_checkpoints: 4
+save_policy_interval: 10 # save policy every n epochs
+
+# Validation settings
+validation_interval: 1 # validate every n epochs
+include_stiffness: false
+
+# Early stopping settings
+early_stopping:
+  enabled: true
+  patience: 30  # Number of validation checks without improvement before stopping
+  min_delta: 0.00001  # Minimum improvement to count as progress
+
+# Dataset settings
+use_batch_dataset: true # use batch dataset for faster training
+use_cache: true # use cached prepared data if available (speeds up training)
+use_amp: true  # Mixed precision training (AMP) for faster training
+
+# Dataloader settings for non-batch dataset
+num_workers: 8
+shuffle: true
+drop_last: true
+persistent_workers: true
+prefetch_factor: 8

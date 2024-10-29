@@ -1,0 +1,51 @@
+type: BASIC
+body_parts:
+  right:
+    type: FDCC
+    inner_controller_config:
+      type: OSC_POSE
+      input_max: 1
+      input_min: -1
+      output_max: 1.0
+      output_min: -1.0
+      kp: 15
+      damping_ratio: 10
+      impedance_mode: fixed
+      kp_limits: [0, 300]
+      damping_ratio_limits: [0, 10]
+      position_limits: null
+      orientation_limits: null
+      uncouple_pos_ori: true
+      control_delta: true
+      interpolation: null
+      ramp_ratio: 0.2
+      input_ref_frame: world
+    iterations: 1
+    error_scale: 0.1
+    stiffness: 2500
+    input_max: 1
+    input_min: -1
+    output_max: 0.3
+    output_min: -0.3
+    kp: [0.035, 0.035, 0.035, 0.1, 0.1, 0.1]
+    kd: 0.0001
+    compliance_mode: variable_stiffness # fixed or variable_stiffness
+    force_limits: [-50.0, 50.0]
+    torque_limits: [-10.0, 10.0]
+    ft_buffer_size: 2
+    stiffness_limits: [50, 5000]
+    kp_limits: [0, 300]
+    damping_ratio_limits: [0, 100]
+    selection_matrix: [1, 1, 1, 1, 1, 1]
+    enable_selection_matrix: false
+    goal_update_mode: achieved
+    position_limits: null
+    orientation_limits: null
+    control_delta: true
+    use_ori: false
+    frame_of_reference: eef
+    gripper_body_name: wiping_gripper
+    interpolation: null
+    ramp_ratio: 0.2
+    gripper:
+      type: GRIP

@@ -1,0 +1,14 @@
+# ================== Base Teleoperation Settings ==================
+defaults:
+  - device: gamepad
+  - _self_
+
+arm: right
+controller: osc
+dict_as_action: true
+ft_viz_maxlen: 500
+save: false
+plot_ft: false
+copy_dataset: true
+other_arm_dataset_dir: null
+add_noise: false

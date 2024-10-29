@@ -1,0 +1,51 @@
+# ================== Single Arm Wiping Dataset Configuration ==================
+dataset:
+  repo_id: "single_arm_wiping_fdcc"
+  root: ${oc.env:HOME}/dipcom_env/dipcom
+  dir: "${.root}/data/${.repo_id}"
+  task: "wiping"
+  overwrite: false
+  fps: ${robosuite.control_freq}
+  num_episodes: 10
+  episode_len: 800
+  episode_idx: 0
+  seed: 42
+
+# ================== Camera Configuration ==================
+camera_height: 480
+camera_width: 480
+cameras:
+  closeview:
+    height: ${dataset.camera_height}
+    width: ${dataset.camera_width}
+    channels: 3
+  robot0_eye_in_hand:
+    height: ${dataset.camera_height}
+    width: ${dataset.camera_width}
+    channels: 3
+
+# ================== State Configuration ==================
+states:
+  observation.qpos: [6]
+  observation.qvel: [6]
+  observation.ft: [6]
+  observation.eef.position: [3]
+  observation.eef.linear_velocity: [3]
+  observation.eef.angular_velocity: [3]
+  observation.eef.rotation_ortho6: [6]
+
+# ================== Action Configuration ==================
+actions:
+  action.joint: [6]
+  action.position: [3]
+  action.rotation_ortho6: [6]
+  action.stiffness_diag: [6]
+
+replay_actions:
+  action.position: [3]
+  action.stiffness_diag: [3]
+
+# ================== Image Writer Configuration ==================
+image_writer:
+  num_processes: 4
+  threads_per_camera: 4

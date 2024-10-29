@@ -1,0 +1,47 @@
+# ================== RoboSuite Setup ==================
+defaults:
+  - controller_configs: osc_pose
+  - _self_
+
+env_name: Wipe
+robots: UR5e
+gripper_types: "WipingGripper"
+env_configuration: null
+initialization_noise: null
+renderer: mjviewer
+control_freq: 25
+controller_configs:
+  body_parts:
+    right:
+      input_type: delta
+      # initial_rot: [-0.7241724, -0.6892504, 0.01585664, 0.01602217]
+
+task_config:
+    arm_limit_collision_penalty: -10.0
+    wipe_contact_reward: 0.01
+    unit_wiped_reward: 50.0
+    ee_accel_penalty: 0
+    excess_force_penalty_mul: 0.05
+    distance_multiplier: 5.0
+    distance_th_multiplier: 5.0
+    table_full_size: [0.5, 0.8, 0.05]
+    table_offset: [0.15, 0, 0.9]
+    table_friction: [0.03, 0.005, 0.0001]
+    table_friction_std: 0
+    table_height: 0.0
+    table_height_std: 0.0
+    line_width: 0.04
+    two_clusters: false
+    coverage_factor: 0.3
+    num_markers: 50
+    contact_threshold: 1.0
+    pressure_threshold: 0.5
+    pressure_threshold_max: 60.0
+    print_results: false
+    get_info: false
+    use_robot_obs: true
+    use_contact_obs: true
+    early_terminations: true
+    use_condensed_obj_obs: true
+
+hard_reset: true

@@ -1,0 +1,43 @@
+name: diffusion
+camera_shape: [3, 92, 92] # for smaller images
+diffusion_config:
+  _target_: lerobot.policies.diffusion.configuration_diffusion.DiffusionConfig
+  n_obs_steps: 2
+  horizon: 16
+  n_action_steps: 8
+  num_train_timesteps: 100
+
+#   # model: "TRANSFORMER"
+#   model: "FILM"
+
+#   n_layer: 8
+#   n_head: 4
+#   n_emb: 768
+#   p_drop_emb: 0.01
+#   p_drop_attn: 0.01
+#   casual_attn: True
+#   time_as_cond: True
+#   obs_as_cond: True
+#   n_cond_layers: 2
+
+#   temporal_ensemble_coeff: 0.01
+
+#   vision_backbone: resnet18
+#   # crop_shape: [440, 440]
+#   crop_shape: null
+#   crop_is_random: False
+#   pretrained_backbone_weights: null
+#   use_group_norm: True
+#   spatial_softmax_num_keypoints: 32
+
+#   noise_scheduler_type: DDIM
+#   num_train_timesteps: 100
+#   beta_schedule: squaredcos_cap_v2
+#   beta_start: 0.0001
+#   beta_end: 0.02
+#   prediction_type: epsilon
+  # clip_sample: False
+  # clip_sample_range: 1.0
+  # num_inference_steps: 20
+  # loss_type: mse
+

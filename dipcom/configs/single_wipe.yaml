@@ -1,0 +1,49 @@
+defaults:
+  - robosuite: WipeFDCC
+  - datasets/single_wipe@dataset
+  - common/teleop@teleop
+  - common/policy@policy
+  - model: dipcom 
+  - _self_ # last so that it can override the settings from the above configs
+
+# ================== Model Selection ==================
+model_name: ${model.name}
+
+# ================== Base Teleoperation Settings ==================
+save_episode: false
+teleop:
+  arm: single
+  pos_sensitivity: 1.0
+  rot_sensitivity: 1.0
+
+# ================== Paths ==================
+paths:
+  root: ${oc.env:HOME}/dipcom_env
+  ckpt_name: ""
+  output_dir: ${paths.root}/rollouts/${dataset.dataset.repo_id}${model_suffix}
+  ckpt_dir: ${paths.root}/rollouts/${dataset.dataset.repo_id}${model_suffix}
+  load_ckpt: ${paths.ckpt_dir}/runs/${paths.ckpt_name}
+  leaf_dir: ${model_name}/${now:%Y-%m-%d/%H-%M-%S}
+
+# Hydra configuration
+hydra:
+  run:
+    dir: ${paths.output_dir}/runs/${paths.leaf_dir}
+  sweep:
+    dir: ${paths.output_dir}/multirun/${paths.leaf_dir}
+    subdir: ${hydra.job.num}
+
+# ================== Model-specific Settings ==================
+model_suffix: "_dipcom"
+wanted_features: 
+  - observation.images.closeview
+  - observation.images.robot0_eye_in_hand
+  - observation.eef.position
+  - observation.ft
+  - action.position
+  - action.stiffness_diag
+
+eval:
+  base:
+    ckpt_name: 
+    load_ckpt: ${paths.root}/rollouts/single_arm_wiping_fdcc_dipcom/runs/${eval.base.ckpt_name}

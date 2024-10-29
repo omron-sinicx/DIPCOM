@@ -1,0 +1,22 @@
+type: BASIC
+body_parts:
+  right:
+    type: OSC_POSITION
+    input_max: 1
+    input_min: -1
+    output_max: 0.05
+    output_min: -0.05
+    kp: 600
+    damping_ratio: 1
+    impedance_mode: fixed
+    kp_limits: [10, 1000]
+    damping_ratio_limits: [0, 10]
+    qpos_limits: null
+    orientation_limits: null
+    uncouple_pos_ori: true
+    input_type: delta
+    interpolation: null
+    ramp_ratio: 0.2
+    gripper_body_name: wiping_gripper
+    gripper:
+      type: GRIP
