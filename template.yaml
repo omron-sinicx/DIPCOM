@@ -84,7 +84,7 @@ projects:
     img: 'https://github.com/omron-sinicx/CompACT/blob/project-page/src/media/overview.png?raw=true'
     description: |
       CompACT: Learning Compliance Control via Action Chunking with Transformers.
-    url: https://github.com/omron-sinicx/CompACT
+    url: https://omron-sinicx.github.io/CompACT/
 #   - title: 'Language-Guided Pattern Formation for Swarm Robotics with Multi-Agent Reinforcement Learning'
 #     journal: "IROS'24"
 #     img: 'https://github.com/omron-sinicx/swarm-body/raw/main/images/teaser.jpg'
