@@ -10,7 +10,7 @@ resources:
   # blog: https://medium.com/sinicx/multipolar-multi-source-policy-aggregation-for-transfer-reinforcement-learning-between-diverse-bc42a152b0f5
   # huggingface: https://huggingface.co/
 description: "DIPCOM: Learning Diffusion Policies from Demonstrations For Compliant Contact-rich Manipulation. (Code to be released soon)"
-image: https://omron-sinicx.github.io/CompACT/assets/overview.png
+image: https://omron-sinicx.github.io/DIPCOM/assets/overview.png
 url: https://omron-sinicx.github.io/DIPCOM
 # speakerdeck: b7a0614c24014dcbbb121fbb9ed234cd
 authors:
@@ -78,7 +78,7 @@ overview: |
 projects:
   - title: 'Learning Variable Compliance Control From a Few Demonstrations for Bimanual Robot with Haptic Feedback Teleoperation System'
     journal: "IROS2024"
-    # img: 'https://github.com/omron-sinicx/CompACT/blob/project-page/src/media/overview.png?raw=true'
+    img: 'https://github.com/omron-sinicx/CompACT/blob/project-page/src/media/overview.png?raw=true'
     description: |
       CompACT: Learning Compliance Control via Action Chunking with Transformers.
     url: https://github.com/omron-sinicx/CompACT
