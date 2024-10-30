@@ -10,7 +10,7 @@ resources:
   # blog: https://medium.com/sinicx/multipolar-multi-source-policy-aggregation-for-transfer-reinforcement-learning-between-diverse-bc42a152b0f5
   # huggingface: https://huggingface.co/
 description: "DIPCOM: Learning Diffusion Policies from Demonstrations For Compliant Contact-rich Manipulation. (Code to be released soon)"
-image: https://omron-sinicx.github.io/DIPCOM/assets/overview.png
+image: https://omron-sinicx.github.io/DIPCOM/assets/teaser.png
 url: https://omron-sinicx.github.io/DIPCOM
 # speakerdeck: b7a0614c24014dcbbb121fbb9ed234cd
 authors:
@@ -66,7 +66,10 @@ overview: |
   control, and extends our previous work by demonstrating its effectiveness in real-world tasks. We present a detailed comparison between our framework and 
   existing methods, highlighting the advantages and best practices for deploying diffusion-based compliance control.
 
-# body:
+body:
+    - title: Acknowledgements
+      text: |
+        This work was partly supported by the JST-Mirai Program (Grant Number JPMJMI21G2)
 #   - title: Policy rollouts
 #     text: |
 #        <iframe width="784" height="441" 
