@@ -9,7 +9,7 @@ resources:
   video: https://www.youtube.com/embed/77tUVfyqHrw
   # blog: https://medium.com/sinicx/multipolar-multi-source-policy-aggregation-for-transfer-reinforcement-learning-between-diverse-bc42a152b0f5
   # huggingface: https://huggingface.co/
-description: "DIPCOM: Learning Diffusion Policies from Demonstrations For Compliant Contact-rich Manipulation. (Code to be released soon)"
+description: 'DIPCOM: Learning Diffusion Policies from Demonstrations For Compliant Contact-rich Manipulation. (Code to be released soon)'
 image: https://omron-sinicx.github.io/DIPCOM/assets/teaser.png
 url: https://omron-sinicx.github.io/DIPCOM
 # speakerdeck: b7a0614c24014dcbbb121fbb9ed234cd
@@ -67,20 +67,39 @@ overview: |
   existing methods, highlighting the advantages and best practices for deploying diffusion-based compliance control.
 
 body:
-    - title: Acknowledgements
-      text: |
-        This work was partly supported by the JST-Mirai Program (Grant Number JPMJMI21G2)
+  - title: Method
+    text: |
+      DIPCOM leverages generative diffusion models to handle compliant control tasks for rigid robots. 
+      The framework trains a denoising neural network that progressively transforms random noise into meaningful actions. 
+      During inference, the policy predicts both **Cartesian end-effector poses** and **arm stiffness** values, 
+      enabling the robot to adaptively regulate force while maintaining precision and stability.
+
+      Unlike position or velocity controllers that struggle with force-intensive tasks, DIPCOM's compliance control 
+      scheme modulates forces through external sensors, allowing rigid robots to handle tasks involving direct contact. 
+      The diffusion-based approach captures **multi-modal action distributions**, producing more diverse behaviors 
+      than previous VAE-ACT-based methods—particularly beneficial for long-horizon tasks with repetitive behaviors, 
+      such as powder grinding.
+
+  - title: Key Contributions
+    text: |
+      - **Novel diffusion-based framework** for rigid robots to learn complex contact-rich manipulations from demonstrations via compliance control
+      - **Enhanced force control** through multimodal distribution modeling, leveraging the expressiveness of diffusion models
+      - **Comprehensive comparison** between DIPCOM and Comp-ACT on challenging real-world tasks, with guidelines and best practices for deploying diffusion-based compliance control
+
+  - title: Acknowledgements
+    text: |
+      This work was partly supported by the JST-Mirai Program (Grant Number JPMJMI21G2)
 #   - title: Policy rollouts
 #     text: |
-#        <iframe width="784" height="441" 
-#           src="https://www.youtube.com/embed/HVJ9D5kVGAs?si=ozNgUpdWIfSk7Vx7" 
-#           title="YouTube video player" frameborder="0" 
+#        <iframe width="784" height="441"
+#           src="https://www.youtube.com/embed/HVJ9D5kVGAs?si=ozNgUpdWIfSk7Vx7"
+#           title="YouTube video player" frameborder="0"
 #           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 #           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 #           </iframe>
 projects:
   - title: 'Learning Variable Compliance Control From a Few Demonstrations for Bimanual Robot with Haptic Feedback Teleoperation System'
-    journal: "IROS2024"
+    journal: 'IROS2024'
     img: 'https://github.com/omron-sinicx/CompACT/blob/project-page/src/media/overview.png?raw=true'
     description: |
       CompACT: Learning Compliance Control via Action Chunking with Transformers.
