@@ -7,18 +7,38 @@ Project page: https://omron-sinicx.github.io/DIPCOM/
 ## Installation
 
 1. [Optional] clone robosuite dependencies for simulation
-```shell
-git clone https://github.com/omron-sinicx/robosuite.git -b dipcom
-```
+  ```shell
+  git clone https://github.com/omron-sinicx/robosuite.git -b dipcom
+  ```
 
 2. use `pixi` for easy setup
-```shell
-pixi install
 
-pixi shell
-```
+- Install `pixi`
+  ```shell
+  curl -fsSL https://pixi.sh/install.sh | bash
+  ```
+
+- Setup pixi environment
+  ```shell
+  pixi install
+
+  pixi shell
+  ```
 
 Then check the [dipcom/README.md](dipcom/README.md) for more detailed instructions.
+
+## Docker
+Alternatively you can use our docker setup:
+1. Build the docker image
+```shell
+./BUILD-DOCKER-IMAGE.sh
+```
+2. Run container
+```shell
+./RUN-DOCKER-CONTAINER.sh
+```
+3. Follow the steps in the "**Installation**" section above.
+
 
 
 ### Authors:
